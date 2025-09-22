@@ -2390,234 +2390,132 @@ width: 95%;
 }
 
 /* ==============================
-   MixLux DJEP Client Portal – Branded Overrides
-   Safe: respects 800px width & base markup
+   MIXLUX BRAND PATCH (append at end)
+   Keeps original CSS; overrides look/feel only.
    ============================== */
 
-/* Optional: brand fonts (keep if you want the luxe headline look) */
+/* Optional brand fonts */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap");
 
+/* Palette */
 :root{
-  --mixlux-bg: #fffdf8;         /* warm ivory */
-  --mixlux-panel: #ffffff;
+  --mixlux-bg: #fffdf8;  /* warm ivory */
   --mixlux-text: #1b1b1b;
-  --mixlux-muted: #6b6b6b;
-  --mixlux-dark: #0f0f0f;
+  --mixlux-dark: #111111;
   --mixlux-gold: #b08d57;
   --mixlux-gold-dk: #8c6d3d;
   --mixlux-border: #e7e2d6;
-  --mixlux-soft: rgba(0,0,0,.06);
 }
 
-/* ===== Base / container ===== */
+/* Base + container (keep 800px from your original) */
 body.djep-body{
   background: var(--mixlux-bg) !important;
   color: var(--mixlux-text) !important;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+  font-family: "Inter", -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
   font-size: 14px !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-
 #djep-content, #djep-guestrequestcontent{
-  background: var(--mixlux-panel) !important;
-  border: 1px solid var(--mixlux-border) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 6px 24px var(--mixlux-soft) !important;
-  padding: 20px 22px !important;
+  background:#fff !important;
+  border:1px solid var(--mixlux-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06) !important;
+  padding:18px !important;
 }
 
-/* ===== Header / brand bar (use your logo URL if you want a banner) ===== */
-/* Replace LOGO_URL with your real https link if desired */
-#djep-header{
-  padding: 18px 0 !important;
-  background: transparent !important;
-}
+/* Header spacing / optional logo bar */
+#djep-header{ padding:12px 0 !important; background:transparent !important; }
 #djep-header .mixlux-logo{
-  display:block; margin:0 auto 8px; width:180px; height:42px;
+  display:block; width:180px; height:42px; margin:0 auto 8px;
   background:url("LOGO_URL") center/contain no-repeat;
 }
 
-/* ===== Navigation (tabs) ===== */
-#djep-navbar{ width:800px; } /* keep the DNE width */
+/* NAV: kill bullets, line up horizontally, brand colors */
 ul#djep-navigation{
-  padding: 8px 10px 0 10px !important;
+  list-style:none !important;
+  padding-left:0 !important;
+  margin:8px 10px 0 !important;
+  display:flex !important; gap:8px !important; align-items:center !important;
 }
-ul#djep-navigation li,
+ul#djep-navigation li{ float:none !important; width:auto !important; margin:0 !important; background:transparent !important; border:none !important; }
 ul#djep-navigation li a{
-  background: var(--mixlux-dark) !important;
-  border-color: var(--mixlux-dark) !important;
-  border-radius: 10px !important;
+  display:inline-block !important;
+  padding:8px 12px !important; height:auto !important; line-height:1.2 !important;
+  border-radius:10px !important; text-transform:none !important;
+  background: var(--mixlux-dark) !important; color:#fff !important; border:1px solid var(--mixlux-dark) !important;
+  font-weight:600 !important; letter-spacing:.3px !important;
 }
-ul#djep-navigation li a{
-  color:#fff !important;
-  font-weight:600 !important;
-  letter-spacing:.4px !important;
-}
-ul#djep-navigation li a:hover{
-  background: var(--mixlux-gold) !important;
-}
+ul#djep-navigation li a:hover{ background:var(--mixlux-gold) !important; border-color:var(--mixlux-gold) !important; color:#fff !important; }
 ul#djep-navigation li.selected a{
-  background:#fff !important;
-  color:var(--mixlux-dark) !important;
-  border:1px solid var(--mixlux-border) !important;
-  box-shadow:0 2px 10px var(--mixlux-soft);
+  background:#fff !important; color:var(--mixlux-dark) !important; border:1px solid var(--mixlux-border) !important;
+  box-shadow:0 2px 10px rgba(0,0,0,.06) !important;
 }
 ul#djep-navigation li.shadow{ box-shadow:none !important; }
 
-/* ===== Headings ===== */
-h1.djep-h1, h2.djep-h2, h3.djep-h3{
-  color: var(--mixlux-dark) !important;
-  font-family: "Playfair Display", serif !important;
-}
-h1.djep-h1{ font-size: 30px !important; margin: 18px 0 !important; }
-h2.djep-h2{ font-size: 22px !important; margin: 14px 0 !important; }
-h3.djep-h3{ font-size: 18px !important; color: var(--mixlux-muted) !important; }
+/* Headings */
+h1.djep-h1, h2.djep-h2, h3.djep-h3{ font-family:"Playfair Display", serif !important; color:var(--mixlux-dark) !important; }
+h1.djep-h1{ font-size:30px !important; margin:18px 0 !important; }
+h2.djep-h2{ font-size:22px !important; margin:14px 0 !important; }
+h3.djep-h3{ font-size:18px !important; color:#6b6b6b !important; }
 
-/* ===== Section headers (“Titlebars”) ===== */
+/* Section title bars (add gold accent strip) */
 .djep-titlebar, .djep-titlebarsmall, .djep-titlebarsmaller{
-  background: #fff !important;
-  color: var(--mixlux-dark) !important;
-  border: 1px solid var(--mixlux-border) !important;
-  border-radius: 12px !important;
-  padding: 12px 16px !important;
-  position: relative;
+  background:#fff !important; color:var(--mixlux-dark) !important;
+  border:1px solid var(--mixlux-border) !important; border-radius:12px !important; position:relative;
 }
 .djep-titlebar:before, .djep-titlebarsmall:before, .djep-titlebarsmaller:before{
-  content:"";
-  position:absolute; left:0; top:0;
-  width:6px; height:100%;
-  background: var(--mixlux-gold);
-  border-top-left-radius: 12px; border-bottom-left-radius: 12px;
+  content:""; position:absolute; left:0; top:0; bottom:0; width:6px;
+  background:var(--mixlux-gold); border-top-left-radius:12px; border-bottom-left-radius:12px;
 }
 
-/* ===== Links ===== */
-a{ color: var(--mixlux-gold) !important; text-decoration:none !important; }
-a:hover{ color: var(--mixlux-gold-dk) !important; text-decoration: underline !important; }
+/* Links */
+a{ color:var(--mixlux-gold) !important; text-decoration:none !important; }
+a:hover{ color:var(--mixlux-gold-dk) !important; text-decoration:underline !important; }
 
-/* ===== Forms ===== */
-input[type="text"], input[type="email"], input[type="password"], select, textarea,
-input.djep-input, select.djep-select, textarea.djep-textarea{
-  border:1px solid var(--mixlux-border) !important;
-  border-radius:10px !important;
-  padding:10px 12px !important;
-  background:#fff !important;
+/* Inputs */
+input.djep-input, select.djep-select, textarea.djep-textarea,
+input[type="text"], input[type="email"], input[type="password"], select, textarea{
+  border:1px solid var(--mixlux-border) !important; border-radius:8px !important; padding:10px 12px !important; background:#fff !important;
 }
 input:focus, select:focus, textarea:focus{
-  outline:none !important;
-  border-color: var(--mixlux-gold) !important;
-  box-shadow: 0 0 0 3px rgba(176,141,87,.18) !important;
+  outline:none !important; border-color:var(--mixlux-gold) !important; box-shadow:0 0 0 3px rgba(176,141,87,.16) !important;
 }
 
-/* ===== Buttons (flatten gradients → gold) ===== */
-button, input[type="submit"],
-.djep-planeventbutton, .djep-eventdetailsbutton, .djep-paymentbutton,
-.djep-readviewbutton, .djep-actionbutton, .djep-searchbutton,
-.djep-guestsubmit, .djep-guestsubmitrequests, .djep-clipboardbutton,
-.djep-songideabutton, .djep-toplistbuttons, .djep-toplistbuttons2,
-.djep-toplistbuttons3, .djep-toplistbuttons4, .djep-toplistbuttons5{
-  background: var(--mixlux-gold) !important;
-  color:#fff !important;
-  border:none !important;
-  border-radius: 10px !important;
-  padding: 10px 14px !important;
-  font-weight:600 !important;
-  text-shadow:none !important;
-  box-shadow:none !important;
-  transition: transform .02s ease, background .2s ease;
+/* Buttons (flatten gradients to gold) */
+.djep-planeventbutton, .djep-eventdetailsbutton, .djep-paymentbutton, .djep-readviewbutton,
+.djep-actionbutton, .djep-searchbutton, .djep-guestsubmit, .djep-guestsubmitrequests,
+.djep-clipboardbutton, .djep-songideabutton, .djep-toplistbuttons, .djep-toplistbuttons2,
+.djep-toplistbuttons3, .djep-toplistbuttons4, .djep-toplistbuttons5,
+button, input[type="submit"]{
+  background: var(--mixlux-gold) !important; border:none !important; color:#fff !important;
+  border-radius:10px !important; padding:10px 14px !important; text-shadow:none !important; box-shadow:none !important; font-weight:600 !important;
 }
-button:hover, input[type="submit"]:hover,
-.djep-planeventbutton:hover, .djep-eventdetailsbutton:hover, .djep-paymentbutton:hover,
-.djep-readviewbutton:hover, .djep-actionbutton:hover, .djep-searchbutton:hover,
-.djep-guestsubmit:hover, .djep-guestsubmitrequests:hover, .djep-clipboardbutton:hover,
-.djep-songideabutton:hover, .djep-toplistbuttons:hover, .djep-toplistbuttons2:hover,
-.djep-toplistbuttons3:hover, .djep-toplistbuttons4:hover, .djep-toplistbuttons5:hover{
-  background: var(--mixlux-gold-dk) !important;
-  transform: translateY(-1px);
-}
+.djep-planeventbutton:hover, .djep-eventdetailsbutton:hover, .djep-paymentbutton:hover, .djep-readviewbutton:hover,
+.djep-actionbutton:hover, .djep-searchbutton:hover, .djep-guestsubmit:hover, .djep-guestsubmitrequests:hover,
+.djep-clipboardbutton:hover, .djep-songideabutton:hover, .djep-toplistbuttons:hover, .djep-toplistbuttons2:hover,
+.djep-toplistbuttons3:hover, .djep-toplistbuttons4:hover, .djep-toplistbuttons5:hover,
+button:hover, input[type="submit"]:hover{ background: var(--mixlux-gold-dk) !important; }
 
-/* ===== Tables (invoices, forms, lists) ===== */
-table{ border-collapse: collapse !important; width:100% !important; }
-table th, .djep-table-headers th{
-  background: var(--mixlux-dark) !important;
-  color:#fff !important;
-  padding:10px !important;
-  text-align:left !important;
-}
-table td{
-  border-bottom: 1px solid #eee !important;
-  padding:10px !important;
-}
-.djep-odd{ background:#faf8f2 !important; }
-.djep-even{ background:#ffffff !important; }
+/* Tables */
+.djep-table-headers th, table th{ background:var(--mixlux-dark) !important; color:#fff !important; }
+table td{ border-bottom:1px solid #eee !important; }
 
-/* ===== Status/alert rows (keep meanings; refine palette) ===== */
-.djep-balanceduerow    { background:#fff4d6 !important; color:#7a5200 !important; }
-.djep-balancepaidrow   { background:#e9f8f1 !important; color:#1e6b45 !important; }
-.djep-totalfeerow,
-.djep-totalfeerow span { background:#eef5ff !important; color:#044B9B !important; }
-.djep-totaldepositrow  { background:#ffe8ec !important; color:#84212b !important; }
+/* Totals/alerts: refresh palette, keep meaning */
+.djep-balanceduerow  { background:#fff4d6 !important; color:#7a5200 !important; }
+.djep-balancepaidrow { background:#e9f8f1 !important; color:#1e6b45 !important; }
+.djep-totalfeerow, .djep-totalfeerow span { background:#eef5ff !important; color:#044B9B !important; }
+.djep-totaldepositrow{ background:#ffe8ec !important; color:#84212b !important; }
 
-/* ===== “Module” boxes (planning, payments, etc.) ===== */
-.djep-planningformsbox, .djep-timelinebox, .djep-ourcontactinfobox, .djep-emailhistorybox,
-.djep-managemusicbox, .djep-paymentsfinancesbox, .djep-totalfeebox, .djep-viewtimelinebox,
-.djep-planningformsviewbox, .djep-weddingnamesbox, .djep-viewdocumentbox,
-.djep-otherfilesbox, .djep-documentsbox, .djep-paymenthistorybox{
-  background:#fff !important;
-  border:1px solid var(--mixlux-border) !important;
-  border-radius:12px !important;
-  padding-bottom: 6px !important;
+/* Playlist header bars: modern flat with colored left trim */
+.djep-playlistboxmustplaytitle, .djep-playlistboxdonotplaytitle, .djep-playlistboxplayifposstitle,
+.djep-playlistboxdedicationstitle, .djep-playlistboxonlyrequesttitle, .djep-playlistboxspotifytitle,
+.djep-playlistboxcustomtype1title, .djep-playlistboxcustomtype2title, .djep-playlistboxcustomtype3title,
+.djep-playlistboxcustomtype4title, .djep-playlistboxcustomtype5title, .djep-special_song_header{
+  background:#111 !important; color:#fff !important; border:none !important; min-height:36px !important;
+  padding:8px 12px !important; border-radius:10px !important; position:relative;
 }
-
-/* ===== Music request “playlist” title bars – modern flat tags ===== */
-/* Remove heavy gradients, keep quick color recognition */
-.djep-playlistboxmustplaytitle,
-.djep-playlistboxdonotplaytitle,
-.djep-playlistboxplayifposstitle,
-.djep-playlistboxdedicationstitle,
-.djep-playlistboxonlyrequesttitle,
-.djep-playlistboxspotifytitle,
-.djep-playlistboxcustomtype1title,
-.djep-playlistboxcustomtype2title,
-.djep-playlistboxcustomtype3title,
-.djep-playlistboxcustomtype4title,
-.djep-playlistboxcustomtype5title,
-.djep-special_song_header{
-  background: #111 !important;         /* base */
-  color: #fff !important;
-  border: none !important;
-  height: auto !important;
-  min-height: 36px !important;
-  display:flex; align-items:center;
-  padding: 8px 12px !important;
-  border-radius:10px !important;
-  position: relative;
-}
-
-/* Colored left trims for each category */
-.djep-playlistboxmustplaytitle::before       { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#2dbb3a; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.djep-playlistboxdonotplaytitle::before      { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#e64a3c; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.djep-playlistboxplayifposstitle::before     { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#f2c437; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.djep-playlistboxdedicationstitle::before    { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#4f84f6; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.djep-playlistboxonlyrequesttitle::before    { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#b46bd1; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.djep-playlistboxspotifytitle::before        { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#1db954; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.djep-playlistboxcustomtype1title::before    { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#4da6ff; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.djep-playlistboxcustomtype2title::before    { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#79c851; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.djep-playlistboxcustomtype3title::before    { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#ff5da8; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.djep-playlistboxcustomtype4title::before    { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#ff8a54; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-.djep-playlistboxcustomtype5title::before    { content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:#ffd24d; border-top-left-radius:10px; border-bottom-left-radius:10px; }
-
-/* ===== Hover states / misc polish ===== */
-.djep-musicresultrow:hover, .djep-musicresultrowmobile:hover{
-  background:#f4f7ff !important;
-}
-.djep-esigned{
-  background-color:#f6f6f6 !important;
-  color:#333 !important;
-  border:1px solid #e5e5e5 !important;
-  border-radius:4px !important;
-}
-
-/* ===== Mobile touch-ups ===== */
-.djepm-content{ margin:12px !important; }
-.djepm-timelinemobilepanel{ background:#fff !important; border:1px solid var(--mixlux-border) !important; }
+.djep-playlistboxmustplaytitle::before    {content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#2dbb3a;border-top-left-radius:10px;border-bottom-left-radius:10px;}
+.djep-playlistboxdonotplaytitle::before   {content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#e64a3c;border-top-left-radius:10px;border-bottom-left-radius:10px;}
+.djep-playlistboxplayifposstitle::before  {content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#f2c437;border-top-left-radius:10px;border-bottom-left-radius:10px;}
+.djep-playlistboxdedicationstitle::before {content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#4f84f6;border-top-left-radius:10px;border-bottom-left-radius:10px;}
+.djep-playlistboxonlyrequesttitle::before {content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#b46bd1;border-top-left-radius:10px;border-bottom-left-radius:10px;}
+.djep-playlistboxspotifytitle::before     {content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:#1db954;border-top-left-radius:10px;border-bottom-left-radius:10px;}
