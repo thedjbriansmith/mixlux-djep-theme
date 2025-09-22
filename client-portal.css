@@ -1,0 +1,172 @@
+/* === MixLux Overrides (Layer on top of existing DJEP CSS) === */
+/* Palette */
+:root {
+  --mixlux-bg: #f9f9f9;
+  --mixlux-text: #222222;
+  --mixlux-accent: #b08d57;   /* Lux gold */
+  --mixlux-accent-2: #8c6d3d; /* Hover gold */
+  --mixlux-dark: #111111;
+  --mixlux-muted: #666666;
+  --mixlux-border: #dddddd;
+}
+
+/* Base */
+body.djep-body {
+  background-color: var(--mixlux-bg) !important;
+  color: var(--mixlux-text) !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.4;
+}
+
+/* Container: keep 800px width (DNE in your base), just refine look */
+body.djep-body #djep-content,
+body.djep-body #djep-guestrequestcontent {
+  background: #ffffff !important;
+  border: 1px solid var(--mixlux-border) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,.07) !important;
+  border-radius: 12px !important;
+  padding: 20px 18px !important;
+}
+
+/* Header (center image stays; we just give space) */
+#djep-header { padding: 18px 0 !important; }
+
+/* Navigation */
+#djep-navbar { width: 800px; } /* respect original layout */
+ul#djep-navigation { padding-top: 10px !important; }
+
+ul#djep-navigation li,
+ul#djep-navigation li a {
+  background: var(--mixlux-dark) !important;
+  border-color: var(--mixlux-dark) !important;
+}
+
+ul#djep-navigation li a {
+  color: #fff !important;
+  font-weight: 600 !important;
+  letter-spacing: .5px !important;
+}
+ul#djep-navigation li a:hover {
+  background: var(--mixlux-accent) !important;
+}
+ul#djep-navigation li.selected a {
+  background: #fff !important;
+  color: var(--mixlux-dark) !important;
+  border: 1px solid var(--mixlux-border) !important;
+}
+
+/* Headings */
+h1.djep-h1 { color: var(--mixlux-dark) !important; font-size: 28px !important; }
+h2.djep-h2 { color: var(--mixlux-dark) !important; font-size: 22px !important; }
+h3.djep-h3 { color: var(--mixlux-muted) !important; }
+
+/* Title bars / section headers */
+.djep-titlebar,
+.djep-titlebarsmall,
+.djep-titlebarsmaller {
+  background: #fff !important;
+  border-color: var(--mixlux-border) !important;
+  color: var(--mixlux-dark) !important;
+  border-radius: 10px !important;
+}
+
+/* Tables */
+table { border-collapse: collapse !important; }
+.djep-table-headers th,
+table th {
+  background: var(--mixlux-dark) !important;
+  color: #fff !important;
+}
+table td { border-bottom: 1px solid #eee !important; }
+.djep-odd  { background: #fafafa !important; }
+.djep-even { background: #ffffff !important; }
+
+/* Alerts / totals (keep meaning, modernize tone) */
+.djep-balanceduerow    { background: #fff7d6 !important; color: #8a5b00 !important; }
+.djep-balancepaidrow   { background: #eaf8f0 !important; color: #1d7a46 !important; }
+.djep-totalfeerow,
+.djep-totalfeerow span { background: #ecf5ff !important; color: #044B9B !important; }
+.djep-totaldepositrow  { background: #ffe9ea !important; color: #8b1c21 !important; }
+
+/* Forms */
+input.djep-input, select.djep-select, textarea.djep-textarea,
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+  border: 1px solid var(--mixlux-border) !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  border-color: var(--mixlux-accent) !important;
+  box-shadow: 0 0 0 3px rgba(176,141,87,.15) !important;
+}
+
+/* Links */
+a { color: var(--mixlux-accent) !important; }
+a:hover { color: var(--mixlux-accent-2) !important; text-decoration: underline !important; }
+
+/* Buttons: flatten gradients → gold */
+button, input[type="submit"],
+.djep-planeventbutton,
+.djep-eventdetailsbutton,
+.djep-paymentbutton,
+.djep-readviewbutton,
+.djep-actionbutton,
+.djep-searchbutton,
+.djep-guestsubmit,
+.djep-guestsubmitrequests,
+.djep-clipboardbutton,
+.djep-songideabutton,
+.djep-toplistbuttons, .djep-toplistbuttons2, .djep-toplistbuttons3, .djep-toplistbuttons4, .djep-toplistbuttons5 {
+  background: var(--mixlux-accent) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+button:hover, input[type="submit"]:hover,
+.djep-planeventbutton:hover,
+.djep-eventdetailsbutton:hover,
+.djep-paymentbutton:hover,
+.djep-readviewbutton:hover,
+.djep-actionbutton:hover,
+.djep-searchbutton:hover,
+.djep-guestsubmit:hover,
+.djep-guestsubmitrequests:hover,
+.djep-clipboardbutton:hover,
+.djep-songideabutton:hover,
+.djep-toplistbuttons:hover, .djep-toplistbuttons2:hover, .djep-toplistbuttons3:hover, .djep-toplistbuttons4:hover, .djep-toplistbuttons5:hover {
+  background: var(--mixlux-accent-2) !important;
+}
+
+/* Boxes / modules (keep your structure; soften look) */
+.djep-planningformsbox, .djep-timelinebox, .djep-ourcontactinfobox,
+.djep-emailhistorybox, .djep-managemusicbox, .djep-paymentsfinancesbox,
+.djep-totalfeebox, .djep-viewtimelinebox, .djep-planningformsviewbox,
+.djep-weddingnamesbox, .djep-viewdocumentbox, .djep-otherfilesbox, .djep-documentsbox {
+  background: #ffffff !important;
+  border: 1px solid var(--mixlux-border) !important;
+  border-radius: 10px !important;
+}
+
+/* Music result hover: subtle */
+.djep-musicresultrow:hover, .djep-musicresultrowmobile:hover {
+  background-color: #f2f6ff !important;
+}
+
+/* E-signed label: keep icon, improve contrast */
+.djep-esigned {
+  background-color: #f4f4f4 !important;
+  color: #333 !important;
+  border: 1px solid #e3e3e3 !important;
+  border-radius: 4px !important;
+}
+
+/* Mobile touch-ups */
+.djepm-content { margin: 12px !important; }
+.djepm-timelinemobilepanel { background: #fff !important; border: 1px solid var(--mixlux-border) !important; }
+
+/* Optional: hide the old gradient shadows under tabs */
+ul#djep-navigation li.shadow { box-shadow: none !important; }
