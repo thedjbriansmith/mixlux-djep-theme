@@ -2536,13 +2536,13 @@ height: 90px;
 width: 150px;
 display: inline-block;
 background-repeat:no-repeat;
-filter: brightness(2.5);
--webkit-filter: brightness(2.5);
+-webkit-filter: invert(1) !important;
+filter: invert(1) !important;
 transition: filter 0.3s ease;
 }
 #djep-addsongimage a:hover, #djep-musicrequestsimage a:hover, #djep-specialsongsimage a:hover, #djep-printrequestsimage a:hover, #djep-guestrequestsimage a:hover {
-filter: brightness(3.5);
--webkit-filter: brightness(3.5);
+-webkit-filter: invert(1) brightness(1.5) !important;
+filter: invert(1) brightness(1.5) !important;
 }
 /* Mobile CSS */
 
