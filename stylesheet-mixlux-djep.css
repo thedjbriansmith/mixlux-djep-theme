@@ -107,7 +107,7 @@ input[type="radio"] {
   text-transform: uppercase;
 }
 .djep-esigned {
-  background-image: url(https://djep21.com/clients/images/padlock_closed.png);
+  background-image: url(https://mixluxplanning.com/clients/images/padlock_closed.png);
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: 5px 5px;
@@ -1064,13 +1064,13 @@ textarea.djep-textarea {
   color: #FFF;
 }
 .djep-dragtoplaylist {
-  background-image: url(../images/dragimage.png);
+  background-image: url(https://mixluxplanning.com/clients/images/dragimage.png);
   background-repeat: no-repeat;
   height: 70px;
   width: 173px;
 }
 .djep-playlistitemsaved {
-  background-image: url(../images/savedmusic.png);
+  background-image: url(https://mixluxplanning.com/clients/images/savedmusic.png);
   position: absolute;
   left: 45px;
   top: 20px;
@@ -1078,7 +1078,7 @@ textarea.djep-textarea {
   width: 173px;
 }
 .djep-specialsongitemsaved {
-  background-image: url(../images/specialsavedmusic.png);
+  background-image: url(https://mixluxplanning.com/clients/images/specialsavedmusic.png);
   position: absolute;
   left: 45px;
   top: 20px;
@@ -1087,7 +1087,7 @@ textarea.djep-textarea {
   z-index: 1;
 }
 tr[id*="draggable_"] {
-  cursor: url(../images/openhand.cur), default !important;
+  cursor: url(https://mixluxplanning.com/clients/images/openhand.cur), default !important;
 }
 tr[id*="song_row_for_songid"] > td {
   padding: 2px 4px !important;
@@ -1889,7 +1889,7 @@ textarea#djep-timelineheadline {
 .djep-timelineitems:hover:before {
   margin: 0px 4px;
   float: right;
-  content: url(https://djep21.com/clients/images/arrow_right.png);
+  content: url(https://mixluxplanning.com/clients/images/arrow_right.png);
 }
 .djep-timelineitems {
   box-shadow: none;
@@ -1906,7 +1906,7 @@ textarea#djep-timelineheadline {
   text-shadow: none;
   width: 220px;
   text-align: left;
-  cursor: url(../images/openhand.cur), default !important;
+  cursor: url(https://mixluxplanning.com/clients/images/openhand.cur), default !important;
   transition: all 0.2s ease;
 }
 .djep-timelineitems:hover {
@@ -2025,19 +2025,19 @@ textarea#djep-timelineheadline {
 
 /* Request music image buttons — DJEP-hosted images kept for functionality */
 #djep-addsongimage a {
-  background: url('../images/smokedglass/musicrequests-addsongs.png') !important;
+  background: url('https://mixluxplanning.com/clients/images/smokedglass/musicrequests-addsongs.png') !important;
 }
 #djep-musicrequestsimage a {
-  background: url('../images/smokedglass/musicrequests-viewrequests.png') !important;
+  background: url('https://mixluxplanning.com/clients/images/smokedglass/musicrequests-viewrequests.png') !important;
 }
 #djep-guestrequestsimage a {
-  background: url('../images/smokedglass/musicrequests-guestrequests.png') !important;
+  background: url('https://mixluxplanning.com/clients/images/smokedglass/musicrequests-guestrequests.png') !important;
 }
 #djep-specialsongsimage a {
-  background: url('../images/smokedglass/musicrequests-specialrequests.png') !important;
+  background: url('https://mixluxplanning.com/clients/images/smokedglass/musicrequests-specialrequests.png') !important;
 }
 #djep-printrequestsimage a {
-  background: url('../images/smokedglass/musicrequests-printrequests.png') !important;
+  background: url('https://mixluxplanning.com/clients/images/smokedglass/musicrequests-printrequests.png') !important;
 }
 
 #djep-addsongimage a, #djep-musicrequestsimage a, #djep-specialsongsimage a, #djep-printrequestsimage a, #djep-guestrequestsimage a {
