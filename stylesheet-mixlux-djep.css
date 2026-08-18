@@ -1303,6 +1303,7 @@ djep-SubmitHide {
   padding: 11px 28px;
   text-align: center;
   text-decoration: none;
+  white-space: nowrap;
   transition: all 0.2s ease;
   cursor: pointer;
 }
@@ -1752,10 +1753,18 @@ textarea#djep-timelineheadline {
   color: var(--mx-text-soft);
   margin-bottom: 20px;
   overflow: hidden;
-  padding: 6px 12px 12px;
+  padding: 6px 16px 16px;
 }
 .djep-planneraccessbox {
   margin-top: 8px;
+}
+
+/* Section titles inside cards: kill the page-level top margin */
+[class*="box"] .djep-titlebar,
+[class*="box"] .djep-titlebarsmall,
+[class*="box"] h2.djep-h2 {
+  margin-top: 10px;
+  margin-bottom: 14px;
 }
 
 /* Guest Request Music Database CSS Settings */
