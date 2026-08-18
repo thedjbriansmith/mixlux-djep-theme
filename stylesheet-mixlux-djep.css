@@ -1316,12 +1316,13 @@ djep-SubmitHide {
 .djep-paymenthistorybox .djep-paymentbutton {
   padding: 11px 16px !important;
 }
-/* DJEP hardcodes <br> inside button labels — remove so labels stay on one line */
-.djep-planeventbutton br, .djep-eventdetailsbutton br, .djep-paymentbutton br {
-  display: none;
-}
-/* Consistent size + even spacing when buttons sit in a group */
+/* DJEP hardcodes <br> inside button labels. Flex layout neutralizes the
+   line break; the gap restores the word spacing the <br> swallowed. */
 .djep-planeventbutton, .djep-eventdetailsbutton, .djep-paymentbutton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28em;
   min-width: 132px;
   margin: 4px 2px;
   padding: 11px 16px;
