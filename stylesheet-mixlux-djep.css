@@ -1314,7 +1314,17 @@ djep-SubmitHide {
   transform: translateY(-1px);
 }
 .djep-paymenthistorybox .djep-paymentbutton {
-  padding: 9px 40px !important;
+  padding: 11px 16px !important;
+}
+/* DJEP hardcodes <br> inside button labels — remove so labels stay on one line */
+.djep-planeventbutton br, .djep-eventdetailsbutton br, .djep-paymentbutton br {
+  display: none;
+}
+/* Consistent size + even spacing when buttons sit in a group */
+.djep-planeventbutton, .djep-eventdetailsbutton, .djep-paymentbutton {
+  min-width: 132px;
+  margin: 4px 2px;
+  padding: 11px 16px;
 }
 .djep-readviewbutton {
   box-shadow: none;
@@ -1906,9 +1916,12 @@ textarea#djep-timelineheadline {
   cursor: pointer;
 }
 .djep-latestemailsbox, .djep-upcomingmeetingsbox {
-  width: 48%;
+  width: 49%;
   float: left;
-  margin: 5px;
+  margin: 5px 0;
+}
+.djep-latestemailsbox {
+  margin-right: 2%;
 }
 
 /* Countdown Clock */
